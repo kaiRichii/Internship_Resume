@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Responsive and Printable Resume</title>
     <style>
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); /* Font Awesome for icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); 
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -18,19 +18,20 @@
         .container {
             display: flex;
             flex-direction: row;
-            width: 8.3in; /* Slightly less than bond paper width for small margins */
-            height: 10.9in; /* Almost full bond paper height */
+            max-width: 8.3in; 
+            width: 100%;
+            height: auto; 
             background: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 1px solid #ddd;
-            margin-top: 0.1in; /* Minimal top margin */
-            padding: 0.3in; /* Use padding for internal spacing */
+            margin: 20px auto; 
+            padding: 0.3in;
             box-sizing: border-box;
         }
         .left-panel {
             background: #f2f2f2;
             padding: 20px;
-            width: 30%;
+            width: 30%; 
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -38,24 +39,25 @@
         }
         .left-panel img {
             border-radius: 50%;
-            width: 120px; /* Slightly larger profile image */
+            width: 120px;
             height: 120px;
             object-fit: cover;
             margin-bottom: 15px;
         }
         .left-panel h2 {
-            font-size: 18px; /* Larger name font */
+            font-size: 18px;
             margin: 10px 0;
             text-align: center;
             color: #333;
         }
-        .contact{
-            margin-top: 21px;
+        .contact {
+            margin-top: 15px;
+            width: 100%;
         }
         .contact-info {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 14px;
             color: #333;
         }
@@ -77,7 +79,7 @@
             font-size: 14px;
             color: #333;
             margin-bottom: 12px;
-            line-height: 1.6; /* Increased line spacing for readability */
+            line-height: 1.6;
         }
         ul {
             list-style-type: none;
@@ -96,11 +98,11 @@
         }
         .right-panel {
             padding: 20px;
-            width: 70%;
+            width: 70%; 
             box-sizing: border-box;
         }
         .section {
-            margin-bottom: 25px; /* Increased spacing between sections */
+            margin-bottom: 20px;
         }
         .section h3 {
             font-size: 16px;
@@ -110,18 +112,89 @@
             border-bottom: 2px solid #ddd;
             padding-bottom: 5px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .left-panel,
+            .right-panel {
+                width: 100%;
+            }
+            .left-panel img {
+                width: 100px;
+                height: 100px;
+            }
+            .left-panel h2 {
+                font-size: 16px;
+            }
+            .contact-info {
+                font-size: 12px;
+            }
+            .section-title {
+                font-size: 14px;
+            }
+            .content,
+            ul li {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            .left-panel img {
+                width: 80px;
+                height: 80px;
+            }
+            .left-panel h2 {
+                font-size: 14px;
+            }
+            .contact-info {
+                font-size: 11px;
+            }
+            .section-title {
+                font-size: 12px;
+            }
+            .content,
+            ul li {
+                font-size: 11px;
+            }
+        }
         @media print {
-                body {
-                    -webkit-print-color-adjust: exact; /* For WebKit-based browsers (Chrome, Edge, Safari) */
-                    print-color-adjust: exact;       /* For Firefox */
-                }
-                }
-                @media print {
             @page {
-                margin: 0; /* Removes default browser margins */
+                margin: 0; 
             }
             body {
-                margin: 0;
+                margin: 0; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+            .container {
+                display: flex;
+                flex-direction: row; 
+                width: 8.3in; 
+                height: 10.9in; 
+                padding: 0.3in; 
+                box-sizing: border-box; 
+            }
+            .left-panel {
+                width: 30%;
+            }
+            .right-panel {
+                width: 70%;
+            }
+            .contact-info {
+                font-size: 14px;
+            }
+            .content {
+                font-size: 14px;
+            }
+            ul li {
+                font-size: 14px;
             }
         }
     </style>
@@ -170,7 +243,6 @@
                 <h3 class="section-title">Education</h3>
                 <p class="content"><strong>Cebu Technological University</strong></p>
                 <p class="content">Bachelor of Science in Information Technology</p>
-                <!-- <p class="content">Expected Graduation: [Month, Year]</p> -->
                 <p class="content">Internship Requirement: 730 Hours</p>
             </div>
             <div class="section">
